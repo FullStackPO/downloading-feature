@@ -3,6 +3,7 @@ let loading = document.querySelector('.loading');
 let per = document.querySelector('.per');
 
 btn.addEventListener('click', function(){
+    btn.disabled = true;
     let count = 0;
     let loader = setInterval(()=>{
         count++;
@@ -12,4 +13,5 @@ btn.addEventListener('click', function(){
     setTimeout(()=>{
         clearInterval(loader);
     },5000)
+    if(count === 100) btn.disabled = false;
 })
